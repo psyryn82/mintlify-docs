@@ -1,47 +1,47 @@
 ---
-title: "Quickstart"
-description: "Begin with a guide on the fastest path to a successful outcome"
+title: "Get started with Chaotic Command"
+description: "Use Chaotic Command for the first time: sign in with Discord, select a server, install the bot, preview a template, and confirm setup."
+keywords: ["quickstart", "first setup", "Discord login", "install bot", "apply template"]
 ---
 
-Describe how someone begins using your product. What is the first thing they need to do? Are there any prerequisites?
+Use this quickstart to create your first reviewed server setup with Chaotic Command. You need a Discord account that owns the server or has Manage Server permission, plus the ability to install the Chaotic Command bot.
 
-A quickstart should take someone from zero to using your product. They'll get a quick win and a sense of what they can accomplish.
+<Warning>
+  Test the workflow in a new, disposable Discord server first. Do not use a production, customer, or active community server for acceptance testing.
+</Warning>
 
-## Prerequisites
+## Before you begin
 
-Before you begin, you must have:
+- Open the Chaotic Command instance provided by the person who operates it.
+- Sign in with the Discord account that manages the server.
+- Have permission to add the bot to the server.
+- Be prepared to review role permissions and channel visibility yourself.
 
-- Requirement one (for example, Node.js 18+, a free account, an API key)
-- Requirement two (for example, a compatible device, a compatible browser, a compatible operating system)
-
-## Get started
+## First setup
 
 <Steps>
-  <Step title="Install">
-    Describe how to install your product or sign up.
-
-    ```bash
-    npm install your-package
-    ```
+  <Step title="Sign in with Discord">
+    Select the sign-in option and authorize Chaotic Command. The app lists servers where your Discord account has Manage Server or Administrator permission.
   </Step>
-  <Step title="Configure">
-    Describe any setup or configuration needed before first use.
-
-    ```bash
-    your-cli init
-    ```
+  <Step title="Choose a server">
+    Select the server you want to prepare. If it does not appear, confirm that you are signed in to the correct Discord account and have the required server permission.
   </Step>
-  <Step title="Run it">
-    Show the first thing a user does to see it working.
-
-    ```bash
-    your-cli start
-    ```
+  <Step title="Install the bot">
+    If the server status says the bot is not ready, use the installation link shown by Chaotic Command. The bot requests Manage Channels and Manage Roles, not Administrator. After installation, return to the app and select the server again.
+  </Step>
+  <Step title="Choose a template">
+    Select Community, Gaming, or Support. Review the template contents in [choose a server template](/guides/choose-server-template).
+  </Step>
+  <Step title="Preview the changes">
+    Select the preview action. Read every Create and Reuse item, inspect existing role permissions, and review any warning. Previewing does not change Discord.
+  </Step>
+  <Step title="Confirm the setup">
+    Type the exact `APPLY <server-id>` phrase shown by the app, then accept the final browser confirmation. Only then does Chaotic Command send the listed create requests to Discord.
   </Step>
 </Steps>
 
-<Tip>
-  Give people a way to get help. This could be a link to a support page, a chat with a customer support agent, or a forum for your product.
+## After setup
 
-  Example: Need help? Reach out to us at [support@yourcompany.com](mailto:support@yourcompany.com).
-</Tip>
+Review the completed result in the app and in Discord. New roles have zero permissions and are not assigned to members. Review the new channels' visibility before inviting members to use them.
+
+If a setup only partly completes, read the [troubleshooting guide](/troubleshooting) and create a fresh preview before retrying.
