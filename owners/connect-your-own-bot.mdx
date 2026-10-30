@@ -1,0 +1,171 @@
+---
+title: "Connect your own Discord bot"
+description: "Create a Discord bot you control, connect it securely to Chaotic Command, assign it to servers, and use it for setup."
+keywords: ["bring your own bot", "BYOB", "Discord bot token", "connect bot", "install bot", "bot permissions"]
+---
+
+Chaotic Command supports customer-owned Discord bots. You create and control the bot in the Discord Developer Portal, connect its bot token to your Chaotic Command account, and choose which servers use it.
+
+You still sign in to Chaotic Command with the normal **Sign in with Discord** button. Your personal bot does not need its own OAuth client secret or redirect URL.
+
+<Warning>
+  Treat a bot token like a password. Only enter it in the HTTPS Chaotic Command bot-connection form. Never send it to support, paste it into chat, commit it to Git, or include it in screenshots. If it is exposed, reset it in the Discord Developer Portal.
+</Warning>
+
+## Before you begin
+
+You need:
+
+- A Discord account that can manage the server you want to configure.
+- Permission to create an application in the [Discord Developer Portal](https://discord.com/developers/applications).
+- Access to Chaotic Command over HTTPS.
+- A bot application that you control.
+
+You can connect up to five personal bots to your Chaotic Command account.
+
+## 1. Create your bot in Discord
+
+<Steps>
+  <Step title="Open the Developer Portal">
+    Go to [Discord Developer Portal](https://discord.com/developers/applications) and sign in.
+  </Step>
+  <Step title="Create an application">
+    Select **New Application**, enter a name, and create it.
+  </Step>
+  <Step title="Open the Bot page">
+    Select **Bot** in the application settings. Add a bot user if Discord has not already created one.
+  </Step>
+  <Step title="Generate a bot token">
+    Use the token controls to reveal or reset the bot token. Copy it somewhere private temporarily so you can paste it into Chaotic Command.
+  </Step>
+</Steps>
+
+You need the **bot token** from the Bot page. Do not use the Application ID, Public Key, Client Secret, or an OAuth authorization code.
+
+You do not need to configure an OAuth redirect URL for this personal bot. Chaotic Command's own Discord application handles user sign-in.
+
+## 2. Sign in to Chaotic Command
+
+1. Open Chaotic Command over HTTPS.
+2. Select **Sign in with Discord**.
+3. Authorize the requested account identity and server-list access.
+4. Wait for your manageable servers to load.
+
+This sign-in connects your Discord user account. Connecting a personal bot is a separate step.
+
+## 3. Connect your bot token
+
+1. Find **Your Discord bots**.
+2. Paste the token into **Discord bot token**.
+3. Select **Verify and connect bot**.
+4. Wait while Chaotic Command checks the token with Discord.
+
+When verification succeeds, Chaotic Command saves the bot credential encrypted and selects the bot as your default. The token is not shown again in the bot list or returned in the API response.
+
+If verification fails, confirm that you copied the bot token from the application's **Bot** page. Do not try an application ID, public key, or client secret.
+
+## 4. Install the bot in a server
+
+1. Select the server you want to configure.
+2. In **Your Discord bots**, choose the bot you want that server to use.
+3. Select **Use selected bot** to save the server-specific assignment.
+4. Select **Install bot in selected server**.
+5. Review Discord's authorization screen and complete installation.
+
+Chaotic Command requests only:
+
+- **Manage Channels**
+- **Manage Roles**
+
+The bot does not need **Administrator**. Do not grant Administrator as a workaround if readiness fails.
+
+After installation, make sure the bot's role is high enough in the server's role hierarchy to manage the roles required by your setup. Return to Chaotic Command, select the server again, and confirm the bot is ready.
+
+<Info>
+  The bot must be installed in a server before Chaotic Command can audit or configure that server with it.
+</Info>
+
+## 5. Use different bots for different servers
+
+Your account has a default personal bot. You can also choose a different connected bot for an individual server.
+
+1. Select the server.
+2. Choose the intended bot in **Your Discord bots**.
+3. Select **Use selected bot**.
+4. Confirm the server now shows the intended bot assignment.
+
+A server-specific assignment takes precedence for that server. Changing your default bot does not replace a server's explicit assignment.
+
+## 6. Audit, preview, and apply a setup
+
+Once the selected bot is installed and ready:
+
+1. Select the server.
+2. Optionally run the read-only server audit to review its current structure.
+3. Choose a Community, Gaming, or Support template, or build a custom structure.
+4. Review the preview's Create and Reuse results.
+5. Resolve any permission warnings.
+6. Enter the exact confirmation phrase shown by the app.
+7. Complete the final browser confirmation only when you are ready.
+
+The existing safety rules still apply:
+
+- Setup is additive. It does not delete existing roles or channels.
+- Exact matching objects are reused.
+- Existing role permissions are not changed.
+- New roles start with zero permissions and are not assigned to members.
+- New channels may inherit visibility from their category or server. Review channel access in Discord before members use them.
+- Discord operations are not transactional. If an apply operation partially fails, inspect the server and create a fresh preview before retrying.
+
+See [preview and review a setup](/guides/preview-and-review), [apply a setup](/guides/apply-setup), and [run a safe server setup](/owners/safe-setup).
+
+## 7. Remove or replace a connected bot
+
+To remove a personal bot from your Chaotic Command account:
+
+1. Select the bot in **Your Discord bots**.
+2. Select **Remove selected personal bot**.
+3. Confirm the removal.
+
+This deletes the stored credential and that account's server assignments from Chaotic Command. It does not revoke the token at Discord, delete the Discord application, or remove the bot from Discord servers.
+
+To replace a token:
+
+1. Reset the token in the Discord Developer Portal.
+2. Remove the old personal bot connection in Chaotic Command.
+3. Connect the bot again using the new token.
+4. Reinstall or reauthorize the bot in servers if Discord requires it.
+
+If a token may have been exposed, reset it at Discord immediately. Removing it from Chaotic Command alone does not invalidate a copied token.
+
+## Troubleshooting
+
+### My token is invalid
+
+Use the bot token from the application's **Bot** page. The Application ID, Public Key, and Client Secret are different values.
+
+### My server is missing
+
+Your signed-in Discord account must own the server or have **Manage Server** permission. Refresh the server list after changing your Discord permissions.
+
+### The bot is not installed
+
+Select the server, select the intended personal bot, and use **Install bot in selected server**. Complete the authorization flow in Discord.
+
+### The bot is installed but not ready
+
+Check that the selected bot has **Manage Channels** and **Manage Roles** in that server. Review its role position and hierarchy. Do not grant Administrator.
+
+### Chaotic Command uses the wrong bot
+
+Select the server, choose the intended bot, and select **Use selected bot**. A server-specific assignment overrides the default bot.
+
+### I removed a bot but it is still in my Discord server
+
+Removing a connection only deletes the credential stored by Chaotic Command and its account-owned assignments. Remove the bot from the Discord server separately if you no longer want it there.
+
+## How your bot credential is handled
+
+Chaotic Command verifies the token with Discord, then stores it encrypted at rest using AES-256-GCM. The bot list returns bot identity information, not the token. Personal bot records and server assignments are scoped to your signed-in Discord account.
+
+Only connect bots through the HTTPS Chaotic Command site. Keep control of your Discord application and reset its token in the Developer Portal if you suspect exposure.
