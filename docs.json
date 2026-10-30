@@ -23,6 +23,7 @@
         "icon": "workflow",
         "pages": [
           "guides/choose-server-template",
+          "guides/custom-server-structure",
           "guides/preview-and-review",
           "guides/apply-setup",
           "guides/server-notes",

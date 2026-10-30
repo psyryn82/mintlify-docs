@@ -1,0 +1,58 @@
+---
+title: "Build a custom server structure"
+description: "Define your own Discord roles, categories, and text channels with the manual editor, and understand its validation limits before previewing."
+keywords: ["custom structure", "custom roles", "custom categories", "custom channels", "server setup"]
+---
+
+Use the Custom structure editor when the built-in Community, Gaming, and Support templates do not match the layout you want. You enter names manually, then review the proposed changes through the same preview and confirmation workflow.
+
+## Enter roles
+
+In the Roles field, enter at least one role name, with one role on each line.
+
+```text
+Member
+Moderator
+Event host
+```
+
+Role names are trimmed and must contain 1 to 100 characters. Do not enter `@everyone`; Discord manages that role.
+
+## Enter categories and channels
+
+In the Categories and channels field, enter one category per line. Separate the category name from its comma-separated channel names with a vertical bar:
+
+```text
+Community | welcome, rules, general
+Events | announcements, signups
+Voice Hub |
+```
+
+A category can have no channels. Channel names must use lowercase English letters, numbers, hyphens, or underscores, and each name must start with a letter or number.
+
+## Validation limits
+
+The editor validates your structure before it can be previewed.
+
+| Item | Limit |
+| --- | --- |
+| Roles | Up to 20 |
+| Categories | 1 to 20 |
+| Channels in each category | Up to 30 |
+| Total roles, categories, and channels | Up to 100 |
+| Role and category names | 1 to 100 characters |
+| Channel names | Lowercase letters, numbers, hyphens, and underscores |
+
+Role, category, and channel names must be unique within their respective lists. Duplicate names are rejected rather than guessed or silently renamed. Unsupported fields, including permission settings, are not accepted.
+
+## Preview before applying
+
+After entering your structure, select the preview action. Review every Create and Reuse item, inspect reused role permissions, and check channel visibility. Editing the fields clears the previous preview, so generate a new one after any change.
+
+Custom structures do not set role permissions, assign roles to members, or make channels private. New roles start with zero permissions and are not assigned. New channels inherit category or server visibility and may be public.
+
+<Warning>
+  Previewing does not write to Discord. Applying requires the same expiring, server-bound preview, exact confirmation phrase, and final browser confirmation used by built-in templates.
+</Warning>
+
+See [preview and review setup changes](/guides/preview-and-review), [role permissions](/admins/role-permissions), and [channel visibility](/admins/channel-visibility) before applying.
