@@ -15,6 +15,7 @@ This page describes the Chaotic Command functionality present in the current app
 | Bot readiness | Checks bot access and required permissions for a selected server |
 | Templates | Community, Gaming, and Support built-in templates |
 | Custom structure | Manually define roles, categories, and text channels with validated limits |
+| Personal saved structures | Save up to 20 private layouts per Discord account; load them into the editor, rename them, or delete them |
 | AI-assisted design | Build a constrained prompt, use an external AI assistant, and import its JSON response for review |
 | Preview | Shows proposed role, category, and channel creation or reuse for built-in and custom structures |
 | Role review | Shows recognized permissions on reused roles and flags elevated or unrecognized permissions |
@@ -30,7 +31,7 @@ The AI-assisted workflow is a manual copy-and-paste handoff. Chaotic Command doe
 
 The imported response is untrusted input. Only the supported role and category/channel structure is accepted. The existing server-side validator remains authoritative. Review and edit the imported names, then create a fresh preview. Importing does not contact Discord or create server objects.
 
-Direct AI provider integration, automatic regeneration, saved AI designs, and AI-driven Discord actions are not available.
+Direct AI provider integration, automatic regeneration, saved AI designs, and AI-driven Discord actions are not available. Personal saved structures are separate from AI design and store only validated role, category, and channel layouts.
 
 See [use AI-assisted structure design](/guides/ai-assisted-structure-design) for the complete workflow.
 
@@ -46,7 +47,7 @@ The current product does not provide:
 - Long-running Discord Gateway automations.
 - Automatic deletion or rollback of created Discord objects.
 
-Custom structures can be entered manually or imported from an external AI assistant. See [build a custom server structure](/guides/custom-server-structure) for the editor format and validation limits.
+Custom structures can be entered manually or imported from an external AI assistant. You can also save validated layouts privately to your Discord account for reuse. See [build a custom server structure](/guides/custom-server-structure) and [save and reuse personal server structures](/guides/saved-server-structures) for details.
 
 Do not treat a template or custom structure as a full server security configuration. Administrators still need to configure role permissions, channel visibility, and member assignments in Discord.
 
