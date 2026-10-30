@@ -15,6 +15,7 @@ The current application includes:
 - Bot readiness checks for Manage Channels and Manage Roles.
 - Community, Gaming, and Support setup templates.
 - Manual custom structures for roles, categories, and text channels.
+- Personal saved structures: save up to 20 validated layouts per Discord account, load them into the editor, rename them, and delete them.
 - AI-assisted prompt generation and JSON import through a user-directed external AI handoff.
 - Preview of built-in and custom plans, including Create and Reuse results.
 - Existing-role permission visibility and elevated-permission warnings.
@@ -26,6 +27,10 @@ The current application includes:
 ## Custom structure editor
 
 The custom structure editor lets you enter role names and category/channel names manually. The validated structure uses the same preview and apply workflow as built-in templates. See [build a custom server structure](/guides/custom-server-structure) for input format and limits.
+
+## Personal saved structures
+
+You can save a validated custom structure to your Discord account and reuse it in the editor later. Each account can keep up to 20 personal structures. Loading replaces the editor fields only; it does not preview or apply changes to a Discord server. Templates are private to the account that saved them. See [save and reuse personal server structures](/guides/saved-server-structures).
 
 ## AI-assisted structure design
 
@@ -40,6 +45,7 @@ The app does not call an AI provider or require an AI API key. Imported content 
 - New channels inherit category or server visibility and may be public.
 - The setup flow does not delete existing objects, post messages, configure private-channel permissions, or roll back partial work.
 - AI import only fills the editable structure fields. It does not create a preview or write to Discord.
+- Loading a personal saved structure only fills the editor. It does not create a preview or write to Discord.
 
 ## Not a release entry
 
