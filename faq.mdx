@@ -1,12 +1,36 @@
 ---
 title: "Frequently asked questions"
-description: "Answers about Chaotic Command access, bot permissions, templates, custom structures, AI-assisted design, role assignment, channel privacy, and previews."
-keywords: ["FAQ", "questions", "Discord setup", "permissions", "templates", "custom structure", "AI"]
+description: "Answers about Chaotic Command access, bot permissions, personal bots, templates, custom structures, AI-assisted design, and previews."
+keywords: ["FAQ", "questions", "Discord setup", "personal bot", "BYOB", "permissions", "templates"]
 ---
 
 ## Who can use Chaotic Command?
 
 A signed-in Discord user must own the selected server or have Manage Server or Administrator permission. Ordinary server members do not have access to the setup workflow.
+
+## Can I use my own Discord bot?
+
+Yes. Create a bot in the Discord Developer Portal, then connect its bot token under **Your Discord bots** in Chaotic Command. You can connect up to five personal bots and assign a different bot to each server. See [connect your own Discord bot](/owners/connect-your-own-bot).
+
+## Do I need to create an OAuth app for my personal bot?
+
+No. You still sign in to Chaotic Command using its normal **Sign in with Discord** button. Your personal bot only needs its bot token. You do not need to provide its client secret or configure an OAuth redirect URL for it.
+
+## Is my bot token visible after I connect it?
+
+No. Chaotic Command verifies the token with Discord and stores it encrypted at rest. The token is not returned in the bot list. Treat it like a password and reset it in the Discord Developer Portal if it may have been exposed.
+
+## Can I connect more than one bot?
+
+Yes. You can connect up to five personal bots to your account. Set a default bot and optionally assign a different connected bot to each server.
+
+## If I change my default bot, will it change every server?
+
+No. A server-specific bot assignment takes precedence. Changing the default does not overwrite explicit assignments for individual servers.
+
+## Does removing a bot revoke its Discord token?
+
+No. Removing a personal bot deletes its stored credential and your server assignments from Chaotic Command. It does not reset the token, delete the Discord application, or remove the bot from servers. Reset an exposed token in the Developer Portal.
 
 ## Does the bot need Administrator?
 
