@@ -1,10 +1,10 @@
 ---
 title: "Build a custom server structure"
-description: "Define your own Discord roles, categories, and text channels with the manual editor, and understand its validation limits before previewing."
+description: "Define or import Discord roles, categories, and text channels with the custom editor, and understand its validation limits before previewing."
 keywords: ["custom structure", "custom roles", "custom categories", "custom channels", "server setup"]
 ---
 
-Use the Custom structure editor when the built-in Community, Gaming, and Support templates do not match the layout you want. You enter names manually, then review the proposed changes through the same preview and confirmation workflow.
+Use the Custom structure editor when the built-in Community, Gaming, and Support templates do not match the layout you want. Enter names manually or import a suggested structure from an external AI assistant. Either way, review the proposed changes through the same preview and confirmation workflow.
 
 ## Enter roles
 
@@ -45,9 +45,13 @@ The editor validates your structure before it can be previewed.
 
 Role, category, and channel names must be unique within their respective lists. Duplicate names are rejected rather than guessed or silently renamed. Unsupported fields, including permission settings, are not accepted.
 
+## Import an AI suggestion
+
+You can use the [AI-assisted structure design workflow](/guides/ai-assisted-structure-design) to create a prompt, get a JSON suggestion from an external assistant, and import the names into these editor fields. The imported structure remains editable and must pass the app's server-side validation before preview.
+
 ## Preview before applying
 
-After entering your structure, select the preview action. Review every Create and Reuse item, inspect reused role permissions, and check channel visibility. Editing the fields clears the previous preview, so generate a new one after any change.
+After entering or importing your structure, select the preview action. Review every Create and Reuse item, inspect reused role permissions, and check channel visibility. Editing the fields clears the previous preview, so generate a new one after any change.
 
 Custom structures do not set role permissions, assign roles to members, or make channels private. New roles start with zero permissions and are not assigned. New channels inherit category or server visibility and may be public.
 
