@@ -1,7 +1,7 @@
 ---
 title: "Frequently asked questions"
-description: "Answers about Chaotic Command access, bot permissions, templates, custom structures, role assignment, channel privacy, and previews."
-keywords: ["FAQ", "questions", "Discord setup", "permissions", "templates", "custom structure"]
+description: "Answers about Chaotic Command access, bot permissions, templates, custom structures, AI-assisted design, role assignment, channel privacy, and previews."
+keywords: ["FAQ", "questions", "Discord setup", "permissions", "templates", "custom structure", "AI"]
 ---
 
 ## Who can use Chaotic Command?
@@ -14,7 +14,19 @@ No. The bot requests Manage Channels and Manage Roles. Do not grant Administrato
 
 ## Can I define my own roles and channels?
 
-Yes. Choose **Custom structure** and enter role names, category names, and text channel names manually. The editor has validation limits and uses the same preview and confirmation safeguards as built-in templates. See [build a custom server structure](/guides/custom-server-structure).
+Yes. Choose **Custom structure** and enter role names, category names, and text channel names manually. You can also import a structure suggested by an external AI assistant. The editor has validation limits and uses the same preview and confirmation safeguards as built-in templates. See [build a custom server structure](/guides/custom-server-structure).
+
+## Does Chaotic Command connect directly to ChatGPT or another AI provider?
+
+No. The current AI-assisted workflow builds a prompt that you copy into an external AI assistant. You then paste the assistant's JSON response into Chaotic Command. The app does not make AI API calls, require an AI API key, or automatically transmit your server brief.
+
+## Is AI-generated content applied automatically?
+
+No. The imported JSON only fills the editable role, category, and channel fields. Review and edit the result, then create a fresh preview. Discord changes still require the normal exact confirmation phrase and final browser confirmation.
+
+## What can the AI response configure?
+
+Only role names, category names, and text channel names are accepted. Permission values, role assignments, private-channel rules, IDs, code, and extra fields are rejected. The server-side validator remains authoritative.
 
 ## Does custom structure setup configure permissions?
 
