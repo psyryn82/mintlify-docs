@@ -15,6 +15,7 @@ This page describes the Chaotic Command functionality present in the current app
 | Bot readiness | Checks bot access and required permissions for a selected server |
 | Templates | Community, Gaming, and Support built-in templates |
 | Custom structure | Manually define roles, categories, and text channels with validated limits |
+| AI-assisted design | Build a constrained prompt, use an external AI assistant, and import its JSON response for review |
 | Preview | Shows proposed role, category, and channel creation or reuse for built-in and custom structures |
 | Role review | Shows recognized permissions on reused roles and flags elevated or unrecognized permissions |
 | Apply | Requires an expiring, single-use, server-bound preview, exact confirmation phrase, and final browser confirmation |
@@ -23,11 +24,20 @@ This page describes the Chaotic Command functionality present in the current app
 | Notes | Shared server notes for current server managers |
 | Recovery | Reports partial progress and allows a fresh preview to reuse completed work |
 
+## AI-assisted design boundaries
+
+The AI-assisted workflow is a manual copy-and-paste handoff. Chaotic Command does not call an AI provider, require an AI API key, or automatically send your server brief to an external service. You choose which external assistant to use.
+
+The imported response is untrusted input. Only the supported role and category/channel structure is accepted. The existing server-side validator remains authoritative. Review and edit the imported names, then create a fresh preview. Importing does not contact Discord or create server objects.
+
+Direct AI provider integration, automatic regeneration, saved AI designs, and AI-driven Discord actions are not available.
+
+See [use AI-assisted structure design](/guides/ai-assisted-structure-design) for the complete workflow.
+
 ## Not currently implemented
 
 The current product does not provide:
 
-- AI-generated server structures.
 - Ticket systems.
 - Moderation tools or automated moderation.
 - Member onboarding or welcome messages.
@@ -36,7 +46,7 @@ The current product does not provide:
 - Long-running Discord Gateway automations.
 - Automatic deletion or rollback of created Discord objects.
 
-Custom structures are currently entered manually. See [build a custom server structure](/guides/custom-server-structure) for the supported editor format and limits.
+Custom structures can be entered manually or imported from an external AI assistant. See [build a custom server structure](/guides/custom-server-structure) for the editor format and validation limits.
 
 Do not treat a template or custom structure as a full server security configuration. Administrators still need to configure role permissions, channel visibility, and member assignments in Discord.
 
