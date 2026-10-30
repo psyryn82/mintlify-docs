@@ -45,6 +45,7 @@
         "icon": "crown",
         "pages": [
           "owners/install-the-bot",
+          "owners/connect-your-own-bot",
           "owners/safe-setup"
         ]
       },
