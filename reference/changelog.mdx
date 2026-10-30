@@ -15,6 +15,7 @@ The current application includes:
 - Bot readiness checks for Manage Channels and Manage Roles.
 - Community, Gaming, and Support setup templates.
 - Manual custom structures for roles, categories, and text channels.
+- AI-assisted prompt generation and JSON import through a user-directed external AI handoff.
 - Preview of built-in and custom plans, including Create and Reuse results.
 - Existing-role permission visibility and elevated-permission warnings.
 - Explicit confirmation before Discord writes.
@@ -26,7 +27,11 @@ The current application includes:
 
 The custom structure editor lets you enter role names and category/channel names manually. The validated structure uses the same preview and apply workflow as built-in templates. See [build a custom server structure](/guides/custom-server-structure) for input format and limits.
 
-This release does not include AI generation, role permission editing, private-channel configuration, role assignment, or automatic cleanup.
+## AI-assisted structure design
+
+The AI-assisted workflow builds a constrained prompt from your server brief. You copy it to an external AI assistant, paste the returned JSON into Chaotic Command, and import the supported role/category/channel names into the editable fields.
+
+The app does not call an AI provider or require an AI API key. Imported content is validated before preview and cannot set permissions, assignments, or private-channel rules. See [use AI-assisted structure design](/guides/ai-assisted-structure-design).
 
 ## Important behavior and safety boundaries
 
@@ -34,6 +39,7 @@ This release does not include AI generation, role permission editing, private-ch
 - Existing roles are reused without changing their permissions.
 - New channels inherit category or server visibility and may be public.
 - The setup flow does not delete existing objects, post messages, configure private-channel permissions, or roll back partial work.
+- AI import only fills the editable structure fields. It does not create a preview or write to Discord.
 
 ## Not a release entry
 
