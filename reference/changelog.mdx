@@ -1,0 +1,37 @@
+---
+title: "Chaotic Command changelog"
+description: "Track documented Chaotic Command capabilities and product changes, with a clear distinction between available features and work that is not released."
+keywords: ["changelog", "release history", "product updates", "features"]
+---
+
+This changelog records user-visible functionality verified in the current Chaotic Command application baseline. It does not list proposed work or changes that have not reached the main application branch.
+
+## Current baseline
+
+The current application includes:
+
+- Discord sign-in and sign-out.
+- Server listing limited to users with Manage Server or Administrator permission.
+- Bot readiness checks for Manage Channels and Manage Roles.
+- Community, Gaming, and Support setup templates.
+- Preview of roles, categories, and channels, including Create and Reuse results.
+- Existing-role permission visibility and elevated-permission warnings.
+- Explicit confirmation before Discord writes.
+- Reuse of exact matches, with stale-preview rejection.
+- Shared server notes for current server managers.
+- Partial-progress reporting when Discord operations fail.
+
+## Important behavior and safety boundaries
+
+- New roles are created with zero permissions and are not assigned to members.
+- Existing roles are reused without changing their permissions.
+- New channels inherit category or server visibility and may be public.
+- The setup flow does not delete existing objects, post messages, configure private-channel permissions, or roll back partial work.
+
+## Not a release entry
+
+Features listed as not currently implemented on the [feature status](/reference/feature-status) page are not part of this baseline. Planned or in-review work is not represented as released functionality here.
+
+## Keeping this history current
+
+When a user-visible feature changes on the main application branch, add an entry describing what changed, who it affects, and any new limitation or migration step. Keep this page aligned with the [current feature status](/reference/feature-status). Link the corresponding application pull request or release when one exists and has been verified.
