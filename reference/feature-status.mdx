@@ -1,0 +1,44 @@
+---
+title: "Current feature status"
+description: "See which Chaotic Command capabilities are available today, the limits of the setup workflow, and features that are not currently implemented."
+keywords: ["feature status", "capabilities", "limitations", "roadmap"]
+---
+
+This page describes the Chaotic Command functionality present in the current application baseline. It distinguishes working capabilities from features that are not implemented.
+
+## Available now
+
+| Area | Current capability |
+| --- | --- |
+| Sign-in | Discord OAuth sign-in and sign-out |
+| Server access | Lists servers the signed-in user can manage |
+| Bot readiness | Checks bot access and required permissions for a selected server |
+| Templates | Community, Gaming, and Support |
+| Preview | Shows proposed role, category, and channel creation or reuse |
+| Role review | Shows recognized permissions on reused roles and flags elevated or unrecognized permissions |
+| Apply | Requires an expiring, single-use, server-bound preview, exact confirmation phrase, and final browser confirmation |
+| Safe creation | New roles have zero permissions and are not assigned to members |
+| Reuse | Exact matching roles, categories, and channels are reused rather than duplicated |
+| Notes | Shared server notes for current server managers |
+| Recovery | Reports partial progress and allows a fresh preview to reuse completed work |
+
+## Not currently implemented
+
+The current product does not provide:
+
+- AI-generated server structures.
+- Ticket systems.
+- Moderation tools or automated moderation.
+- Member onboarding or welcome messages.
+- Automatic role assignment.
+- Private-channel permission configuration.
+- Long-running Discord Gateway automations.
+- Automatic deletion or rollback of created Discord objects.
+
+Do not treat a template as a full server security configuration. Administrators still need to configure role permissions, channel visibility, and member assignments in Discord.
+
+## Testing status
+
+Automated tests use mocked or fixture data and do not contact real Discord servers. Live OAuth, bot installation, and apply behavior require a manual acceptance test in a new, disposable Discord server.
+
+The application repository contains the current manual checklist. Follow it only in a temporary test server, never in a production or community server.
