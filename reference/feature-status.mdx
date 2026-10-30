@@ -13,8 +13,9 @@ This page describes the Chaotic Command functionality present in the current app
 | Sign-in | Discord OAuth sign-in and sign-out |
 | Server access | Lists servers the signed-in user can manage |
 | Bot readiness | Checks bot access and required permissions for a selected server |
-| Templates | Community, Gaming, and Support |
-| Preview | Shows proposed role, category, and channel creation or reuse |
+| Templates | Community, Gaming, and Support built-in templates |
+| Custom structure | Manually define roles, categories, and text channels with validated limits |
+| Preview | Shows proposed role, category, and channel creation or reuse for built-in and custom structures |
 | Role review | Shows recognized permissions on reused roles and flags elevated or unrecognized permissions |
 | Apply | Requires an expiring, single-use, server-bound preview, exact confirmation phrase, and final browser confirmation |
 | Safe creation | New roles have zero permissions and are not assigned to members |
@@ -35,7 +36,9 @@ The current product does not provide:
 - Long-running Discord Gateway automations.
 - Automatic deletion or rollback of created Discord objects.
 
-Do not treat a template as a full server security configuration. Administrators still need to configure role permissions, channel visibility, and member assignments in Discord.
+Custom structures are currently entered manually. See [build a custom server structure](/guides/custom-server-structure) for the supported editor format and limits.
+
+Do not treat a template or custom structure as a full server security configuration. Administrators still need to configure role permissions, channel visibility, and member assignments in Discord.
 
 ## Testing status
 
