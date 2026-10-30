@@ -1,38 +1,55 @@
 ---
-title: "Install the Chaotic Command bot"
-description: "Prepare your Discord server, authorize the Chaotic Command bot with its required permissions, and confirm the bot is ready for setup."
-keywords: ["install bot", "Discord permissions", "Manage Channels", "Manage Roles", "server owner"]
+title: "Install a Discord bot"
+description: "Choose the shared Chaotic Command bot or connect your own bot, authorize the required permissions, and confirm readiness."
+keywords: ["install bot", "personal bot", "bring your own bot", "Discord permissions", "Manage Channels", "Manage Roles"]
 ---
 
-The Chaotic Command bot needs permission to create the roles, categories, and channels listed in a setup preview. You can install it from the server-specific link shown in Chaotic Command.
+Chaotic Command needs a Discord bot installed in the selected server to audit its structure or create roles, categories, and channels. Depending on the deployment, you may use an operator-provided shared bot or connect a personal bot that you control.
+
+## Choose which bot to use
+
+- **Your own bot:** Follow [connect your own Discord bot](/owners/connect-your-own-bot) to create a bot in the Discord Developer Portal, connect its token to your account, and assign it to a server.
+- **Shared bot:** If the operator has configured a shared Chaotic Command bot, use the installation link shown for the selected server.
+
+You still sign in to Chaotic Command with **Sign in with Discord**. A personal bot does not require a separate OAuth client secret or redirect URL.
 
 ## Requirements
 
 - Sign in with a Discord account that owns the server or has Manage Server or Administrator permission.
-- Be able to add the bot to the server.
-- Be prepared to place the bot's role above the roles it may create.
+- Be able to add the selected bot to the server.
+- Be prepared to place the bot's role above the roles it may need to manage.
+- For a personal bot, connect it to your account before installing it.
 
-## Install the bot
+## Install the selected bot
 
 <Steps>
   <Step title="Select your server">
     Sign in to Chaotic Command and choose the server you want to prepare.
   </Step>
+  <Step title="Select the bot">
+    Choose your personal bot or the shared bot option, when available. For a personal bot, select **Use selected bot** to assign it to this server.
+  </Step>
   <Step title="Open the installation link">
-    If the app reports that the bot is not ready, use the installation link displayed for the selected server.
+    Select **Install bot in selected server** or use the installation link displayed when the app reports that the bot is not ready.
   </Step>
   <Step title="Review Discord permissions">
-    The bot requests Manage Channels and Manage Roles. It does not request Administrator. Stop if the authorization screen requests permissions beyond the documented scope.
+    The bot requests Manage Channels and Manage Roles. It does not request Administrator. Stop if the authorization screen requests permissions beyond this documented scope.
   </Step>
   <Step title="Complete installation">
-    Authorize the bot for the intended server.
+    Authorize the selected bot for the intended server.
   </Step>
   <Step title="Check role position">
-    In Discord server settings, move the bot's role above the roles that Chaotic Command will create. Discord role hierarchy can prevent a bot from managing roles below its own role.
+    In Discord server settings, move the bot's role above the roles Chaotic Command may need to create or manage. Discord role hierarchy can prevent a bot from managing roles below its own role.
   </Step>
   <Step title="Return to Chaotic Command">
-    Reselect the server. The app checks bot readiness and reports the server's current channel and role counts when the bot is ready.
+    Reselect the server. The app checks the selected bot's readiness.
   </Step>
 </Steps>
 
 If the bot is still not ready, see [troubleshooting](/troubleshooting). Do not grant Administrator as a workaround.
+
+## Use a different bot for another server
+
+You can connect up to five personal bots. Your default bot is used unless a server has its own bot assignment. To change a server's bot, select the server, choose a connected bot, and select **Use selected bot**. Changing the default does not overwrite a server-specific assignment.
+
+For token creation, connection, replacement, and removal steps, see [connect your own Discord bot](/owners/connect-your-own-bot).
