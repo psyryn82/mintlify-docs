@@ -1,7 +1,7 @@
 ---
 title: "Chaotic Command changelog"
 description: "Track documented Chaotic Command capabilities and product changes, with a clear distinction between available features and work that is not released."
-keywords: ["changelog", "release history", "product updates", "features"]
+keywords: ["changelog", "release history", "product updates", "bring your own bot", "BYOB"]
 ---
 
 This changelog records user-visible functionality verified in the current Chaotic Command application baseline. It does not list proposed work or changes that have not reached the main application branch.
@@ -12,17 +12,26 @@ The current application includes:
 
 - Discord sign-in and sign-out.
 - Server listing limited to users with Manage Server or Administrator permission.
+- Customer-owned bot connections: connect up to five personal bots per Discord account, encrypted token storage, a default bot, and per-server bot assignments.
+- Optional operator-configured shared bot support.
 - Bot readiness checks for Manage Channels and Manage Roles.
 - Community, Gaming, and Support setup templates.
 - Manual custom structures for roles, categories, and text channels.
 - Personal saved structures: save up to 20 validated layouts per Discord account, load them into the editor, rename them, and delete them.
 - AI-assisted prompt generation and JSON import through a user-directed external AI handoff.
+- Read-only server audit for supported role, category, and channel findings.
 - Preview of built-in and custom plans, including Create and Reuse results.
 - Existing-role permission visibility and elevated-permission warnings.
 - Explicit confirmation before Discord writes.
 - Reuse of exact matches, with stale-preview rejection.
 - Shared server notes for current server managers.
 - Partial-progress reporting when Discord operations fail.
+
+## Bring your own bot
+
+You can connect up to five Discord bots that you control. Chaotic Command verifies each bot token with Discord and stores it encrypted at rest. The token is not returned in API responses. You can set a default bot and assign a different connected bot to each server.
+
+Your normal Chaotic Command Discord sign-in remains separate from your personal bot connection. The selected bot must be installed in a server and have Manage Channels and Manage Roles before it can audit or configure that server. Removing a connection deletes the stored credential and your account's assignments, but does not revoke the token at Discord or remove the bot from servers. See [connect your own Discord bot](/owners/connect-your-own-bot).
 
 ## Custom structure editor
 
@@ -46,6 +55,7 @@ The app does not call an AI provider or require an AI API key. Imported content 
 - The setup flow does not delete existing objects, post messages, configure private-channel permissions, or roll back partial work.
 - AI import only fills the editable structure fields. It does not create a preview or write to Discord.
 - Loading a personal saved structure only fills the editor. It does not create a preview or write to Discord.
+- Removing a connected personal bot does not revoke its token or remove it from Discord servers.
 
 ## Not a release entry
 
