@@ -17,16 +17,16 @@ This repository contains the Mintlify documentation for Chaotic Command.
 
 Use Node.js 20.17.0 or newer and the Mintlify CLI.
 
-\`\`\`bash
+```bash
 npm install -g mint
 mint dev
-\`\`\`
+```
 
-Run the commands from the directory containing \`docs.json\`. The local preview is available at \`http://localhost:3000\`.
+Run the commands from the directory containing `docs.json`. The local preview is available at `http://localhost:3000`.
 
 ## Publishing
 
-The Mintlify deployment is connected to this repository's \`main\` branch. Changes merged to \`main\` can publish to the documentation site. Review all content and navigation changes before merging.
+The Mintlify deployment is connected to this repository's `main` branch. Changes merged to `main` can publish to the documentation site. Review all content and navigation changes before merging.
 
 ## Documentation standards
 
@@ -34,4 +34,4 @@ The Mintlify deployment is connected to this repository's \`main\` branch. Chang
 - Keep user, server-owner, administrator, and developer instructions distinct.
 - Never include tokens, secrets, private server identifiers, or personal credentials.
 - Link to the application pull request or source file when it helps a developer verify behavior.
-- Keep feature status and changelog aligned with the current application \`main\` branch.
+- Keep feature status and changelog aligned with the current application `main` branch.
