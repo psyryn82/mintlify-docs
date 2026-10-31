@@ -10,17 +10,17 @@ Use this guide when you configure, test, or operate a Chaotic Command instance. 
 
 Chaotic Command stores customer-owned bot credentials encrypted at rest using AES-256-GCM. The token is verified with Discord before storage and is not returned in API responses.
 
-The encryption key is derived from \`SESSION_SECRET\`. Keep that value stable across restarts and protect it separately from the database.
+The encryption key is derived from `SESSION_SECRET`. Keep that value stable across restarts and protect it separately from the database.
 
 <Warning>
-  Changing or losing \`SESSION_SECRET\` makes existing encrypted sessions and bot credentials unreadable. It is not a routine credential rotation procedure.
+  Changing or losing `SESSION_SECRET` makes existing encrypted sessions and bot credentials unreadable. It is not a routine credential rotation procedure.
 </Warning>
 
 Removing a bot from Chaotic Command deletes its stored credential and account-owned server assignments. It does not revoke the token at Discord. If a token may have been exposed, reset it in the Discord Developer Portal.
 
 ## SQLite storage and recovery
 
-The default data directory is \`.data\`. The database file is \`command.sqlite\`, and SQLite may maintain write-ahead log files alongside it.
+The default data directory is `.data`. The database file is `command.sqlite`, and SQLite may maintain write-ahead log files alongside it.
 
 Persistent data includes sessions, personal saved structures, shared server notes, encrypted bot credentials, and bot assignments.
 
@@ -52,9 +52,9 @@ The active runtime uses a process-local lock for per-server apply operations. Op
 
 Before any public deployment, verify all of the following:
 
-- Use HTTPS and set \`APP_ORIGIN\` to the exact HTTPS origin.
-- Set \`NODE_ENV=production\`.
-- Use a strong, stable \`SESSION_SECRET\`.
+- Use HTTPS and set `APP_ORIGIN` to the exact HTTPS origin.
+- Set `NODE_ENV=production`.
+- Use a strong, stable `SESSION_SECRET`.
 - Mount a private persistent data directory.
 - Restrict access to the database and its backup copies.
 - Add request and rate limits at a trusted reverse proxy.
