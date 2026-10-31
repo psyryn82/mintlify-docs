@@ -50,6 +50,17 @@
         ]
       },
       {
+        "group": "Developer guide",
+        "icon": "code",
+        "pages": [
+          "developers/architecture",
+          "developers/local-development",
+          "developers/integrations",
+          "developers/security-and-operations",
+          "developers/project-status"
+        ]
+      },
+      {
         "group": "Help and reference",
         "icon": "book-open",
         "pages": [
