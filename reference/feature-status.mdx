@@ -71,7 +71,7 @@ Do not treat a template or custom structure as a full server security configurat
 
 ## Testing status
 
-The PR #15 verification record reports 36 tests passed on Node.js v24.22.1. The suite uses mocked Discord responses and offline fixtures. It does not contact real Discord servers.
+Automated tests use mocked Discord responses and offline fixtures. They do not contact real Discord servers.
 
 Live OAuth, personal bot token connection, bot installation, permission hierarchy, and apply behavior still require a manual acceptance test in a new, disposable Discord server. Browser visual and accessibility testing, multi-process safety, and production backup recovery are also outstanding.
 
