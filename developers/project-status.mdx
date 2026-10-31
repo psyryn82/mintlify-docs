@@ -1,0 +1,80 @@
+---
+title: "Project status and next milestones"
+description: "Review the current Chaotic Command baseline, merged implementation work, verification limits, and the next safe development milestones."
+keywords: ["project status", "milestones", "GitHub", "pull requests", "roadmap"]
+---
+
+This page records the verified implementation baseline and outstanding engineering work. It is a development handoff, not a promise that planned features are available to end users.
+
+## Current source baseline
+
+- Repository: [Chaotic-Minds-Collective/Chaotic-Command](https://github.com/Chaotic-Minds-Collective/Chaotic-Command)
+- Branch: `main`
+- Latest inspected commit: `499bf58e673e2166d32e027579585d90a03fb0e4`
+- Latest merged pull request in this audit: [PR #15](https://github.com/Chaotic-Minds-Collective/Chaotic-Command/pull/15)
+- Runtime target: Node.js 24 or newer.
+- Active app: dependency-free Node.js server, vanilla browser client, and native SQLite.
+- Preserved workspace: React/TypeScript Bit components and GuildPilot prototype under `design/` and `guildpilot/`.
+
+## Merged work
+
+| Pull request | Merged change |
+| --- | --- |
+| #10 | Read-only existing-server audit |
+| #12 | Secure customer-owned Discord bot support |
+| #13 | Customer-owned bot acceptance runbook |
+| #14 | Preview binding to bot identity and permission context |
+| #15 | SQLite persistence and encrypted credential recovery tests |
+
+PR #15 records 36 passing tests on Node.js v24.22.1. GitHub Actions run #154 for the current main commit passed the Node.js 24 syntax checks and full test suite. Homepage PR #17 runs #167 and #168 passed the same checks. All of these are automated tests using fixtures and mocked Discord responses, not live Discord acceptance.
+
+## Implemented application capabilities
+
+- Discord OAuth sign-in and manageable-server listing.
+- Optional shared bot and up to five customer-owned bots per account.
+- Encrypted bot credentials and account-scoped bot assignments.
+- Community, Gaming, and Support setup templates.
+- Validated custom role, category, and text-channel structures.
+- Up to 20 personal saved structures per account.
+- Manual AI prompt and JSON import workflow.
+- Read-only audit of supported role, category, and channel data.
+- Expiring, single-use previews bound to the selected bot and relevant server permission context.
+- Additive apply operations with exact confirmation, role permission review, and partial-progress reporting.
+- SQLite-backed sessions, saved structures, notes, bot credentials, and assignments.
+
+## Known limitations
+
+- No new Discord guild creation.
+- No full existing-server revamp operations such as moving, renaming, reordering, or deleting objects.
+- No editing existing role permissions or private-channel permission policies.
+- No moderation, tickets, onboarding, welcome messages, automatic role assignment, or long-running automations.
+- No direct AI provider integration.
+- No Composio adapter in the active runtime.
+- Per-server operation locks are process-local. Multi-process safety is not implemented.
+- Production backup automation and hot-backup recovery are not verified.
+- Live Discord acceptance and browser visual/accessibility tests remain outstanding.
+- The preserved Bit/React workspace has not been established as part of the standalone runtime build.
+
+## Branch review note
+
+The application repository still contains the older `website/rebuild-foundation` branch. It has five commits ahead of and five commits behind `main`, and it is not merged. Do not merge it blindly. Its homepage work has been ported to a fresh main-based branch, `feature/public-homepage-mainline`, in draft [PR #17](https://github.com/Chaotic-Minds-Collective/Chaotic-Command/pull/17). The PR keeps the command workspace at `/command`, corrects marketing claims to match the current MVP, and adds route tests. GitHub Actions runs #167 and #168 both passed on commit `99abd252c04b2a10ca3456fa3abe1b95246738e2`. PR #17 remains unmerged and undeployed.
+
+## Next milestones
+
+1. Review draft PR #17 after owner approval. Its Node.js 24 syntax checks and full automated test suite have passed in GitHub Actions.
+2. Complete live OAuth, bot installation, permission, audit, preview, and apply acceptance in a disposable Discord server.
+3. Add browser visual and accessibility coverage.
+4. Define a consistent SQLite backup and recovery procedure.
+5. Restore and verify the preserved Bit workspace toolchain without recreating or deleting components.
+6. Design a tenant-safe, read-only Composio adapter before considering any Composio write operations.
+7. Plan new-guild provisioning and full existing-server revamp as separate capabilities with explicit action previews and approval gates.
+
+## Operating rules
+
+- Keep development within the approved $0 budget.
+- Preserve existing code and the Bit workspace.
+- Do not deploy publicly without explicit approval.
+- Do not change live Discord servers without explicit approval.
+- Do not add destructive operations without explicit approval and action-specific previews.
+- Never commit credentials or include them in documentation.
+- Record what changed, what was tested, and what remains blocked.

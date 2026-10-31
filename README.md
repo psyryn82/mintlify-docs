@@ -1,55 +1,37 @@
-# Mintlify Starter Kit
+# Chaotic Command documentation
 
-Use the starter kit to get your docs deployed and ready to customize.
+This repository contains the Mintlify documentation for Chaotic Command.
 
-Click the green **Use this template** button at the top of this repo to copy the Mintlify starter kit. The starter kit contains examples with
+**Published site:** https://chaoticcommand.mintlify.site/index
 
-- Guide pages
-- Navigation
-- Customizations
-- API reference pages
-- Use of popular components
+**Application repository:** https://github.com/Chaotic-Minds-Collective/Chaotic-Command
 
-**[Follow the full quickstart guide](https://starter.mintlify.com/quickstart)**
+## Documentation audiences
 
-## AI-assisted writing
+- **Users:** Getting started, templates, custom structures, saved structures, AI-assisted design, previews, and applying approved setup changes.
+- **Server owners:** Bot installation, bring-your-own-bot setup, safe operation, and recovery after partial progress.
+- **Administrators:** Role permissions, channel visibility, and operational safety.
+- **Developers:** Runtime architecture, local development, integrations, security, and project status.
 
-Set up your AI coding tool to work with Mintlify:
+## Local preview
+
+Use Node.js 20.17.0 or newer and the Mintlify CLI.
 
 ```bash
-npx skills add https://mintlify.com/docs
-```
-
-This command installs Mintlify's documentation skill for your configured AI tools like Claude Code, Cursor, Windsurf, and others. The skill includes component reference, writing standards, and workflow guidance.
-
-See the [AI tools guides](/ai-tools) for tool-specific setup.
-
-## Development
-
-Install the [Mintlify CLI](https://www.npmjs.com/package/mint) to preview your documentation changes locally. To install, use the following command:
-
-```
-npm i -g mint
-```
-
-Run the following command at the root of your documentation, where your `docs.json` is located:
-
-```
+npm install -g mint
 mint dev
 ```
 
-View your local preview at `http://localhost:3000`.
+Run the commands from the directory containing `docs.json`. The local preview is available at `http://localhost:3000`.
 
-## Publishing changes
+## Publishing
 
-Install our GitHub app from your [dashboard](https://dashboard.mintlify.com/settings/organization/github-app) to propagate changes from your repo to your deployment. Changes are deployed to production automatically after pushing to the default branch.
+The Mintlify deployment is connected to this repository's `main` branch. Changes merged to `main` can publish to the documentation site. Review all content and navigation changes before merging.
 
-## Need help?
+## Documentation standards
 
-### Troubleshooting
-
-- If your dev environment isn't running: Run `mint update` to ensure you have the most recent version of the CLI.
-- If a page loads as a 404: Make sure you are running in a folder with a valid `docs.json`.
-
-### Resources
-- [Mintlify documentation](https://mintlify.com/docs)
+- Describe only behavior verified in the application repository or clearly label planned work.
+- Keep user, server-owner, administrator, and developer instructions distinct.
+- Never include tokens, secrets, private server identifiers, or personal credentials.
+- Link to the application pull request or source file when it helps a developer verify behavior.
+- Keep feature status and changelog aligned with the current application `main` branch.

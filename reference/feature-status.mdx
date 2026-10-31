@@ -1,10 +1,10 @@
 ---
 title: "Current feature status"
 description: "See which Chaotic Command capabilities are available today, the limits of the setup workflow, and features that are not currently implemented."
-keywords: ["feature status", "capabilities", "limitations", "bring your own bot", "BYOB", "roadmap"]
+keywords: ["feature status", "capabilities", "limitations", "bring your own bot", "BYOB", "SQLite", "preview safety"]
 ---
 
-This page describes the Chaotic Command functionality present in the current application baseline. It distinguishes working capabilities from features that are not implemented.
+This page describes the functionality present in the current application baseline on the `main` branch. It separates implemented behavior from planned work and verification that still needs to happen.
 
 ## Available now
 
@@ -21,12 +21,16 @@ This page describes the Chaotic Command functionality present in the current app
 | AI-assisted design | Build a constrained prompt, use an external AI assistant, and import its JSON response for review |
 | Server audit | Read-only inventory and structural findings for roles, categories, and channels |
 | Preview | Shows proposed role, category, and channel creation or reuse for built-in and custom structures |
+| Preview binding | Binds a preview to the selected bot identity and the server permission context used to create it |
 | Role review | Shows recognized permissions on reused roles and flags elevated or unrecognized permissions |
+| Stale-preview protection | Rejects an apply when the relevant role, channel, or permission-overwrite context changes after preview |
 | Apply | Requires an expiring, single-use, server-bound preview, exact confirmation phrase, and final browser confirmation |
 | Safe creation | New roles have zero permissions and are not assigned to members |
 | Reuse | Exact matching roles, categories, and channels are reused rather than duplicated |
 | Notes | Shared server notes for current server managers |
-| Recovery | Reports partial progress and allows a fresh preview to reuse completed work |
+| Persistence | Sessions, personal structures, notes, bot credentials, and bot assignments use persistent SQLite storage |
+| Recovery tests | Offline tests cover application restart, clean-shutdown database copy recovery, mismatched keys, and corrupted encrypted records |
+| Partial progress | Reports completed work when Discord operations fail and allows a fresh preview to reuse completed objects |
 
 ## Bring-your-own-bot boundaries
 
@@ -50,20 +54,25 @@ See [use AI-assisted structure design](/guides/ai-assisted-structure-design) for
 
 The current product does not provide:
 
+- Creating a new Discord guild or server through the app.
+- Full revamping operations such as moving, renaming, reordering, or deleting existing server objects.
+- Editing existing role permissions or configuring private-channel permission policies.
 - Ticket systems.
 - Moderation tools or automated moderation.
 - Member onboarding or welcome messages.
 - Automatic role assignment.
-- Private-channel permission configuration.
 - Long-running Discord Gateway automations.
 - Automatic deletion or rollback of created Discord objects.
+- Direct in-app AI provider integration.
 
-Custom structures can be entered manually or imported from an external AI assistant. You can also save validated layouts privately to your Discord account for reuse. See [build a custom server structure](/guides/custom-server-structure) and [save and reuse personal server structures](/guides/saved-server-structures) for details.
+The existing-server audit is read-only. The setup workflow can add missing roles, categories, and channels to a server you already manage. It does not reorganize existing objects or provide a complete security assessment.
 
 Do not treat a template or custom structure as a full server security configuration. Administrators still need to configure role permissions, channel visibility, and member assignments in Discord.
 
 ## Testing status
 
-Automated tests use mocked or fixture data and do not contact real Discord servers. Live OAuth, personal bot token connection, bot installation, permissions, and apply behavior require a manual acceptance test in a new, disposable Discord server.
+Automated tests use mocked Discord responses and offline fixtures. They do not contact real Discord servers.
+
+Live OAuth, personal bot token connection, bot installation, permission hierarchy, and apply behavior still require a manual acceptance test in a new, disposable Discord server. Browser visual and accessibility testing, multi-process safety, and production backup recovery are also outstanding.
 
 The application repository contains the current manual checklist. Follow it only in a temporary test server, never in a production or community server.
