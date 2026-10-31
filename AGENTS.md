@@ -5,8 +5,8 @@ This repository contains the Mintlify documentation for Chaotic Command. Read th
 ## Sources of truth
 
 - Application code: https://github.com/Chaotic-Minds-Collective/Chaotic-Command
-- Application implementation source of truth: the application's \`main\` branch.
-- Documentation source of truth: this repository's \`main\` branch.
+- Application implementation source of truth: the application's `main` branch.
+- Documentation source of truth: this repository's `main` branch.
 - Published documentation: https://chaoticcommand.mintlify.site/index
 
 Verify application behavior against code and merged pull requests before documenting it. Do not treat a design mockup, old branch, proposal, or unmerged pull request as released functionality.
@@ -52,7 +52,7 @@ Customer-facing pages should explain actions available through the current appli
 - Keep sentences concise and specific.
 - Bold UI labels and use code formatting for paths, commands, and environment variable names.
 - Avoid marketing claims that exceed verified functionality.
-- Keep the feature-status page and changelog synchronized with the application's merged \`main\` branch.
+- Keep the feature-status page and changelog synchronized with the application's merged `main` branch.
 
 ## Change workflow
 
