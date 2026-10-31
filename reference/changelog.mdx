@@ -39,16 +39,15 @@ Merged in [PR #14](https://github.com/Chaotic-Minds-Collective/Chaotic-Command/p
 
 These safeguards supplement the existing expiry, single-use, server-bound preview and explicit confirmation workflow. They do not prevent Discord changes that occur after the final preflight check.
 
-### SQLite persistence and encrypted credential recovery tests
+### Persistent account data
 
 Merged in [PR #15](https://github.com/Chaotic-Minds-Collective/Chaotic-Command/pull/15).
 
-- Added offline tests against the real file-backed SQLite database path.
-- Verified app restart and clean-shutdown database-copy recovery with the matching session secret.
-- Verified that a mismatched secret and corrupted encrypted records fail closed.
-- Verified that a separate Node.js process can reopen the database and use a stored per-server bot credential through the normal preflight route.
+- Keep personal saved structures, shared server notes, connected bot credentials, and per-server bot assignments in persistent application storage.
+- Keep customer-owned bot credentials encrypted at rest.
+- Preserve account ownership boundaries when data is loaded after an application restart.
 
-The PR verification record reports 36 of 36 tests passed on Node.js v24.22.1. These tests use fixtures and mocked Discord responses. They do not establish live Discord acceptance, hot-backup recovery, or production readiness.
+The change also adds offline coverage for clean-shutdown recovery and fail-closed behavior when encrypted data cannot be decrypted. It does not establish live Discord acceptance, hot-backup recovery, or production readiness.
 
 ## Current baseline
 
