@@ -57,18 +57,17 @@ PR #15 records 36 passing tests on Node.js v24.22.1. This is an offline test res
 
 ## Branch review note
 
-The application repository also contains an older `website/rebuild-foundation` branch. It has five commits ahead of and five commits behind `main`, and it is not merged. Do not merge it blindly. Reconcile its homepage and route changes against the latest main-branch security and persistence work first.
+The application repository still contains the older `website/rebuild-foundation` branch. It has five commits ahead of and five commits behind `main`, and it is not merged. Do not merge it blindly. Its homepage work has been ported to a fresh main-based branch, `feature/public-homepage-mainline`, in draft [PR #17](https://github.com/Chaotic-Minds-Collective/Chaotic-Command/pull/17). The PR keeps the command workspace at `/command`, corrects marketing claims to match the current MVP, and adds route tests. GitHub Actions runs #167 and #168 both passed on commit `99abd252c04b2a10ca3456fa3abe1b95246738e2`. PR #17 remains unmerged and undeployed.
 
 ## Next milestones
 
-1. Complete the public landing page as a separate reviewable change without replacing the active command interface.
-2. Run CI and verify the homepage and command routes on the current main baseline.
-3. Complete live OAuth, bot installation, permission, audit, preview, and apply acceptance in a disposable Discord server.
-4. Add browser visual and accessibility coverage.
-5. Define a consistent SQLite backup and recovery procedure.
-6. Restore and verify the preserved Bit workspace toolchain without recreating or deleting components.
-7. Design a tenant-safe, read-only Composio adapter before considering any Composio write operations.
-8. Plan new-guild provisioning and full existing-server revamp as separate capabilities with explicit action previews and approval gates.
+1. Review draft PR #17 after owner approval. Its Node.js 24 syntax checks and full automated test suite have passed in GitHub Actions.
+2. Complete live OAuth, bot installation, permission, audit, preview, and apply acceptance in a disposable Discord server.
+3. Add browser visual and accessibility coverage.
+4. Define a consistent SQLite backup and recovery procedure.
+5. Restore and verify the preserved Bit workspace toolchain without recreating or deleting components.
+6. Design a tenant-safe, read-only Composio adapter before considering any Composio write operations.
+7. Plan new-guild provisioning and full existing-server revamp as separate capabilities with explicit action previews and approval gates.
 
 ## Operating rules
 
